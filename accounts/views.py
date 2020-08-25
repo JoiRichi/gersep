@@ -44,9 +44,9 @@ def student_page(request):
 
     name = intern_first_name.get(str(request.user))
     candidate_code = intern_candidate_code.get(str(request.user))
-    name1= name.capitalize()
+
     print(name)
-    context={'name': name1,
+    context={'name': name,
              'code': candidate_code,
               }
     return render(request, 'welcome.html', context)
