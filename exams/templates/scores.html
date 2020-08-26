@@ -1,0 +1,124 @@
+{%load static%}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Gersep</title>
+  <meta content=" The Graduate Employment and Research Programme " name="description">
+  <meta content="Gersep, GERSEP, internship, Graduate training" name="keywords">
+<style>
+  .justify {text-align: justify;
+
+  }
+
+</style>
+  <style>
+  div {white-space: normal;
+
+  }
+
+</style>
+  <!-- Favicons -->
+ <link rel="icon" href="{% static '../../static/images/GERSEP.jpg' %}" type="image/x-icon">
+  <link href="{%static 'assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,600,600i,700,700i,900" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{%static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{%static 'assets/vendor/icofont/icofont.min.css' %}" rel="stylesheet">
+  <link href="{%static 'assets/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+  <link href="{%static 'assets/vendor/animate.css/animate.min.css' %}" rel="stylesheet">
+  <link href="{%static 'assets/vendor/venobox/venobox.css' %}" rel="stylesheet">
+  <link href="{%static 'assets/vendor/owl.carousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+  <link href="{%static 'assets/vendor/aos/aos.css' %}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{%static 'assets/css/style.css' %}" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Mamba - v2.3.0
+  * Template URL: https://bootstrapmade.com/mamba-one-page-bootstrap-template-free/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body >
+
+  <section style="background-color:  MediumSeaGreen; color: white" id="topbar" class="d-none d-lg-block">
+    <div class="container clearfix">
+      <h1 style="text-align: center; font-family: 'Actor'; "> Graduate Employment and Research Enhancement Programme (GERSEP)</h1>
+      </div>
+
+
+  </section>
+
+  <!-- ======= Header ======= -->
+  <header  id="header">
+    <div class="container">
+
+      <div class="logo float-left">
+        <!--<h1 class="text-light"><a href="index.html"><span>Gersep</span></a></h1>-->
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <a href="/login"><img src="{% static '../../static/images/isref.png' %}" alt="" class="img-fluid"></a>
+      </div>
+      <div class="logo float-left">
+        <!--<h1 class="text-light"><a href="index.html"><span>Gersep</span></a></h1>-->
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <a href="/login"><img src="{% static '../../static/images/GERSEP.jpg' %}" alt="" class="img-fluid"></a>
+      </div>
+      <div class="logo float-left">
+        <!--<h1 class="text-light"><a href="index.html"><span>Gersep</span></a></h1>-->
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <a href="/login"><img src="{% static '../../static/images/isscir.jpg' %}" alt="" class="img-fluid"></a>
+      </div>
+
+    </div>
+  </header><!-- End Header -->
+
+ <section style="white-space: normal;" class="about-lists">
+      <div class="container">
+        <div class="section-title">
+          <h2 style="align: center">Results</h2>
+        </div>
+
+
+          {%for submission in submissions%}
+          <div class="col-lg-4 col-md-6 content-item" data-aos="fade-up">
+            <p> {{submission.email}}</p>
+            <h4>{{submission.candidate_code}}</h4>
+            <p style="">{{submission.score}}</p>
+          </div>
+          <br>
+          {%endfor%}
+
+
+
+      </div>
+    </section><!-- End About Lists Section -->
+
+ <!-- Vendor JS Files -->
+  <script src="{%static 'assets/vendor/jquery/jquery.min.js' %}"></script>
+  <script src="{%static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{%static 'assets/vendor/jquery.easing/jquery.easing.min.js' %}"></script>
+  <script src="{%static 'assets/vendor/php-email-form/validate.js' %}"></script>
+  <script src="{%static 'assets/vendor/jquery-sticky/jquery.sticky.js' %}"></script>
+  <script src="{%static 'assets/vendor/venobox/venobox.min.js' %}"></script>
+  <script src="{%static 'assets/vendor/waypoints/jquery.waypoints.min.js' %}"></script>
+  <script src="{%static 'assets/vendor/counterup/counterup.min.js' %}"></script>
+  <script src="{%static 'assets/vendor/owl.carousel/owl.carousel.min.js' %}"></script>
+  <script src="{%static 'assets/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+  <script src="{%static 'assets/vendor/aos/aos.js' %}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{%static 'assets/js/main.js' %}"></script>
+
+</body>
+
+</html>

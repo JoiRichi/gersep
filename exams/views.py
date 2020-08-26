@@ -76,3 +76,8 @@ def get_list_of_submission(request):
     else:
         context = {'list': submitted_list, 'form': form, 'code': get_candidate_code()}
         return render(request, 'submission_list.html', context)
+
+
+def get_scores(request):
+    submissions = Submission.objects.all()
+    return render(request, 'scores.html', {'submissions': submissions} )
