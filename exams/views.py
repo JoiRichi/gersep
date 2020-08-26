@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from .forms import ExamForm, GetUsers
 from django.utils import timezone
-from .models import Submission
+from .models import Submission, QuestionForCandidate
 from accounts.intern_details import intern_candidate_code, intern_first_name
 # Create your views here.
 from django.contrib.auth.decorators import login_required
@@ -10,6 +10,7 @@ submitted_list= []
 
 @login_required
 def assignment_page(request):
+    questions = QuestionForCandidate.objects.all()
     form = ExamForm(request.POST or None)
 
 
@@ -24,24 +25,30 @@ def assignment_page(request):
                     return redirect('/success', {})
                 else:
                     context = {
-                        'form': form, 'error': 'You have already submitted, please wait for further instructions from the Director. Best of Luck.'
+                        'form': form, 'error': 'You have already submitted, please wait for further instructions from the Director. Best of Luck.',
+                        'questions': questions
                     }
                     return render(request, 'exam_page.html', context)
             else:
                 context = {
-                    'form': form, 'error': 'You cannot do this exam for another person! Please select your email.'
+                    'form': form, 'error': 'You cannot do this exam for another person! Please select your email.',
+                    'questions': questions
                 }
                 return render(request, 'exam_page.html', context)
         else:
+            submissions = Submission.objects.all()
             context = {
-                'form': form, 'error': 'The deadline has Exceeded!, please feel free to re-apply next time.'
+                'form': form, 'error': 'The deadline has Exceeded!, please feel free to re-apply next time.',
+                'questions': questions
             }
             return render(request, 'exam_page.html', context)
 
 
     else:
         context = {
-                'form': form
+                'form': form,
+            'questions': questions
+
             }
         return render(request, 'exam_page.html', context)
 
@@ -51,7 +58,8 @@ def success_page(request):
     if request.user in submitted_list:
         context ={
             'name': intern_first_name.get(str(request.user)),
-            'code': intern_candidate_code.get(str(request.user))
+            'code': intern_candidate_code.get(str(request.user)),
+
             }
     return render(request, 'success.html', context)
 
