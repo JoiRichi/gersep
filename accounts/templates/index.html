@@ -1,0 +1,88 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+    <head>
+        <link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'>
+
+        <link href="http://fonts.googleapis.com/css?family=Tangerine" rel="stylesheet" type="text/css" />
+        <title>Title</title>
+        <style type="text/css">
+            body {
+                font-weight: 200;
+                font-size: 14px;
+
+            }
+            .header {
+                font-size: 20px;
+                font-weight: 100;
+                text-align: center;
+                color: #007cae;
+            }
+            .title {
+                font-size: 22px;
+                font-weight: 100;
+               /* text-align: right;*/
+               padding: 10px 20px 0px 20px;
+            }
+            .title span {
+                color: MediumSeaGreen;
+            }
+            .details {
+                padding: 10px 20px 0px 20px;
+                text-align: left !important;
+                /*margin-left: 40%;*/
+            }
+            .hrItem {
+                border: none;
+                height: 1px;
+                /* Set the hr color */
+                color: #333; /* old IE */
+                background-color: #fff; /* Modern Browsers */
+            }
+            .head {
+
+           padding: 10px;
+           margin: 20px;
+           margin-top: 60px;
+           border-radius: 25px;
+            border-style: solid;
+  border-color: MediumSeaGreen;
+           }
+   #footer {
+   position:absolute;
+   bottom:0;
+   width:100%;
+   height:60px;   /* Height of the footer */
+   background:#6cf;
+   margin: 50px
+}
+
+        </style>
+    </head>
+    <body >
+        <div  class='wrapper'>
+            <div class='header'>
+                <img src="https://gersep.pythonanywhere.com/static/images/GERSEP.jpg" alt="logo" style="height :50px; width: 50px; margin: 5px">
+                <img src="https://gersep.pythonanywhere.com/static/images/isref.png" alt="logo" style="height :50px; width: 50px;  margin: 5px">
+                <img src="https://gersep.pythonanywhere.com/static/images/isscir.jpg" alt="logo" style="height :50px; width: 50px,  margin: 5px">
+
+                <div class="head" style="padding-top: 60px;" >
+                    <p class='title' style="color: Black; text-align: center; font-size: 40px; font-family: 'Tangerine', serif;">Graduate Employment and Research Skill Enhancement Project <br> (GERSEP)</p>
+                </div>
+            </div>
+        <div>
+
+            <div id="footer"> <div class='details'>
+                <h5 style="text-align: center">This is to certify that <strong style="font-size: 20px"> {{firstname}} {{lastname}} </strong> participated in the recruitment process for the first set of Anatomy Interns in Nigeria.</h5>
+                <p style="text-align: center">This day, the 29th of September, 2020</p>
+                <br><br> <br><br>
+                <p style="text-align: center; font-weight: 1"><span style="font-size: 30px; text-color:Grey; padding-left:20px; margin:20px; "><i style="font-family: Sans-Serif, Arial"><strike>O</strike><i style="font-size: 50px;  "><u>l</u></i><strike>u</strike></i> </span> <br>..................................................<br> Mr. Richard Olumide Daodu <br> <strong>Internship Coordinator</strong></p>
+
+            <hr class='hrItem' />
+                <p style="font-size: 10px"> <a href="">intern@anrescentpub.com </a></p><p style="text-align: right ;font-size: 10px">{{code}}</p>
+        </div>
+            </div>
+    </div>
+        </div>
+    </body>
+</html>

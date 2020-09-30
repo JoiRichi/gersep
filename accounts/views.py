@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect, HttpResponseRedirect
 from .forms import  Loginform, CustomUserCreationForm, CustomUserChangeForm
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login
-from .intern_details import intern_first_name, intern_candidate_code
+from .intern_details import intern_first_name, intern_candidate_code, intern_last_name
 from django.contrib.auth.decorators import login_required
 
 
@@ -46,7 +46,7 @@ def student_page(request):
     candidate_code = intern_candidate_code.get(str(request.user))
 
     print(name)
-    context={'name': name,
+    context={'name': name.capitalize(),
              'code': candidate_code,
               }
     return render(request, 'welcome.html', context)
@@ -78,3 +78,34 @@ def get_name(user):
 def get_code(user):
     user_code = intern_candidate_code(user)
     return user_code
+from django.shortcuts import render
+from django.http import HttpResponse
+from django.views.generic import View
+from django.template.loader import get_template
+from accounts.utils import render_to_pdf #created in step 4
+
+# Create your views here
+
+class GeneratePDF(View):
+
+    def get(self, request, *args, **kwargs):
+        first_name = intern_first_name.get(str(request.user))
+        last_name = intern_last_name.get(str(request.user))
+        candidate_code = intern_candidate_code.get(str(request.user))
+        template = get_template('index.html')
+        context = {'firstname': first_name.capitalize(),
+                   'lastname': last_name.capitalize(),
+                   'code': candidate_code,
+                   }
+        html = template.render(context)
+        pdf = render_to_pdf('index.html', context)
+        if pdf:
+            response = HttpResponse(pdf, content_type='application/pdf')
+            filename = "Gersep_%s.pdf" %("12341231")
+            content = "inline; filename='%s'" %(filename)
+            download = request.GET.get("download")
+            if download:
+                content = "attachment; filename='%s'" %(filename)
+            response['Content-Disposition'] = content
+            return response
+        return HttpResponse("Not found")
