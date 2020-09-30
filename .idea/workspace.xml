@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ba05aada-491c-4d5d-9654-398da18d44a7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/accounts/templates/welcome.html" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/templates/welcome.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/practical/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/practical/settings.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
