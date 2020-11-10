@@ -79,6 +79,7 @@ intern_candidate_code = {
 'kingsleynnaji048@gmail.com':'GER/EDO/AN/INT/OO78',
 'faithtoritse@gmail.com':'GER/EDO/AN/INT/OO79',
 'adesanyalydia@gmail.com':'GER/EDO/AN/INT/OO80',
+'lordrichado@gmail.com': 'Richard Olumide Daodu'
 
 }
 intern_first_name= {
@@ -130,7 +131,7 @@ intern_first_name= {
 'arua4blessing@gmail.com':'Blessing',
 'agufrancis7@gmail.com':'Ikechukwu',
 'anachiwokingsley@gmail.com':'Anachiwo Kingsley Ifunanya',
-'nnamginika@gmail.com':'Ginika  FRANCISCA',
+'nnamginika@gmail.com':'Ginika Francisca',
 'nancydominic22@gmail.com':'Nancy',
 'Sophiadefirst3@gmail.com':'Chinenye Sophia',
 'clintonemeka05@gmail.com':'Clinton ',
@@ -162,9 +163,11 @@ intern_first_name= {
 'kingsleynnaji048@gmail.com':'Kingsley ',
 'faithtoritse@gmail.com':'Gbugbemi',
 'adesanyalydia@gmail.com':'Moses ',
+'lordrichado@gmail.com': 'Richard Olumide Daodu'
 
 
 }
+
 intern_last_name={
 'ohagwugeneral@gmail.com':'Ohagwu',
 'chukwujemima1@gmail.com':'Adanna Chukwu',
@@ -246,5 +249,6 @@ intern_last_name={
 'kingsleynnaji048@gmail.com':'Nnaji',
 'faithtoritse@gmail.com':'Toritsemotse',
 'adesanyalydia@gmail.com':'Damilola Adesanya',
+'lordrichado@gmail.com': 'Richard Olumide Daodu',
 
 }

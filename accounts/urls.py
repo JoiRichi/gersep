@@ -8,5 +8,7 @@ urlpatterns = [
     path('login', views.pagelogin, name='login_up'),
     path('logged_in', views.student_page, name='account'),
     path('signup', views.student_sign_up, name='signup'),
-    url(r'^pdf/$', GeneratePDF.as_view())
+    path('cert', views.certPage, name='cert'),
+    url(r'^pdf/$', GeneratePDF.as_view()),
+
 ]
