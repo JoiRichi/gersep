@@ -15,6 +15,11 @@
 
   }
 p {color: white}
+
+#container2 {
+height: 500px;
+    overflow-y:auto;
+}
 </style>
   <style>
   div {white-space: normal;
@@ -51,34 +56,43 @@ p {color: white}
 </head>
 <body style="background-color:#003300; margin: 20px ">
 <div class="container">
-     {%for question in questions%}
+    <div class="container">
+    <h3 style="text-align: center; color: White">Instructions</h3>
+    <p>
+       <br> 1) Kindly read and re-read this instruction and be sure you understand. <br> 2) You CANNOT write the exam for another person. Hence kindly select the email you logged in with in the email part of the question. <br> 3) Make sure you select the question you are answering in the dropdown , otherwise, your work will not be submitted. <br> 4) Kindly input the last 2 NUMBERS of your candidate code to complete the candidate code section. <br>5) YOU CANNOT RESUBMIT after submission. Kindly make sure you are sure before submission.<br> 6) Submit at least 2 mins before the deadline as your submission will not be accepted afterwards.<br> 7) There is no running time on the page, kindly keep to mind the deadline and your current time.<br> 8) Do not submit without filling all parameters. Cheers.
+    </p>
+
+</div><br>
+    <form method="POST"> {% csrf_token %}
+      {%for question in questions%}
           <div class="col-lg-4 col-md-6 content-item" data-aos="fade-up">
 
             <h4 style="color: white">Start time: {{question.start_time}} <br> Deadline: {{question.deadline}}</h4>
 
           </div>
           <br>
-          {%endfor%}
-
-<form method="POST"> {% csrf_token %}
-     {% if error %}
+        {% if error %}
                <p style="color: red"> {{ error }} </p>
             <p style="font-size: 15px"> <strong style="color:red">*</strong>please obey!!</p>
                 {% endif %}
+        <h4 style="text-align: center; color: white">Questions</h4>
+        <p>{{question.question_text|safe}}</p>
+        <h4 style="color: white; text-align: center;">Enter Your Answers in the big field below</h4>
+        <p style="color: red; font-size: 10px">*Dont forget to select your email and the question</p>
     {{ form.as_p }}
+          {%endfor%}
 
 
-    <input type="submit" value="Submit">
+
+
+
+    <input class="btn btn-primary" type="submit" value="Submit">
+
+
 
 </form>
     </div>
-<div class="container">
-    <h3 style="text-align: center; color: White">Instructions</h3>
-    <p>
-       <br> 1) Kindly read and re-read this instruction and be sure you understand. <br> 2) You CANNOT write the exam for another person. Hence kindly select the email you logged in with in the email part of the question. <br> 3) Make sure you select the question you are answering in the dropdown , otherwise, your work will not be submitted. <br> 4) Kindly input the last 2 NUMBERS of your candidate code to complete the candidate code section. <br>5) YOU CANNOT RESUBMIT after submission. Kindly make sure you are sure before submission.<br> 6) Submit at least 2 mins before the deadline as your submission will not be accepted afterwards.<br> 7) There is no running time on the page, kindly keep to mind the deadline and your current time.<br> 8) Do not submit without filling all parameters. Cheers.
-    </p>
 
-</div>
 
   <!-- Vendor JS Files -->
   <script src="{%static 'assets/vendor/jquery/jquery.min.js' %}"></script>

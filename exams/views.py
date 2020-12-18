@@ -19,6 +19,7 @@ def assignment_page(request):
         email = form.cleaned_data['email']
         if question.deadline > timezone.now():
             if email == request.user:
+
                 if str(email) not in submitted_list:
                     submitted_list.append(str(email))
                     form.save()
