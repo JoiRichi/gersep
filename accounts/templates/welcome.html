@@ -152,7 +152,9 @@
             <p><strong>Your Email:</strong> {{request.user}}</p>
             <p><strong>Your Candidate Code:</strong> {{code}}</p>
           <p style="color: #9933ff"> Download your recruitment participation certificate <strong><a href="#">now</a></strong> </p>
+          {%if question_start%}
           <p style="color: #9933ff"> Are You ready?? Start your exam <strong><a class="btn btn-secondary" href="/exam">now</a></strong> </p>
+          {%endif%}
         </div>
 
     </section>

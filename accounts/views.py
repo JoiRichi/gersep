@@ -4,9 +4,13 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login
 from .intern_details import intern_first_name, intern_candidate_code, intern_last_name
 from django.contrib.auth.decorators import login_required
+from exams.models import  *
 
-
-
+def check_exam(request, id):
+    question = QuestionForCandidate.objects.get(id =id)
+    if question.start_time <= timezone.now():
+        return True
+    return False
 def pagelogin(request):
    # uservalue = ''
    # passwordvalue = ''
@@ -46,8 +50,10 @@ def student_page(request):
     candidate_code = intern_candidate_code.get(str(request.user))
 
     print(name)
+    question_start = check_exam(request, id=1)
     context={'name': name.capitalize(),
              'code': candidate_code,
+             'question_start':question_start
               }
     return render(request, 'welcome.html', context)
 
